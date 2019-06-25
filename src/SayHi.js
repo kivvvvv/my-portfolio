@@ -18,7 +18,7 @@ export default function SayHi() {
 
   return (
     <div className={classes.heroContent}>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Typography component="h2" variant="h4" align="center">
           Hi, my name is
         </Typography>
