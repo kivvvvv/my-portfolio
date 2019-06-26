@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
 
 import NavBar from "./NavBar";
 import SayHi from "./SayHi";
@@ -11,11 +10,9 @@ export default function App() {
     <div>
       <NavBar />
       <main>
-        <Container maxWidth="md">
-          <SayHi />
-          <MyProjects />
-          <GetInTouch />
-        </Container>
+        <SayHi />
+        <MyProjects />
+        <GetInTouch />
       </main>
     </div>
   );

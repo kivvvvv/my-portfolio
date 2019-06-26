@@ -1,12 +1,17 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles(theme => ({
+  MyProjects: {
+    padding: `${theme.spacing(6)}px 0`,
+    backgroundColor: "#e6e6e6"
+  },
   sectionHeader: {
-    margin: `${theme.spacing(5)}px 0`
+    marginBottom: theme.spacing(6)
   }
 }));
 
@@ -50,22 +55,24 @@ export default function MyProjects() {
   ];
 
   return (
-    <section>
-      <header className={classes.sectionHeader}>
-        <Typography variant="h2" align="center">
-          # Projects
-        </Typography>
-      </header>
-      {projects.map((project, projectIndex) => (
-        <ProjectCard
-          key={projectIndex}
-          imgSrc={project.imgSrc}
-          imgAlt={project.imgAlt}
-          title={project.title}
-          desc={project.desc}
-          bullets={project.bullets}
-        />
-      ))}
+    <section className={classes.MyProjects}>
+      <Container maxWidth="md">
+        <header className={classes.sectionHeader}>
+          <Typography variant="h2" align="center">
+            # Projects
+          </Typography>
+        </header>
+        {projects.map((project, projectIndex) => (
+          <ProjectCard
+            key={projectIndex}
+            imgSrc={project.imgSrc}
+            imgAlt={project.imgAlt}
+            title={project.title}
+            desc={project.desc}
+            bullets={project.bullets}
+          />
+        ))}
+      </Container>
     </section>
   );
 }
