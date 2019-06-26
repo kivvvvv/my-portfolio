@@ -12,7 +12,8 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "mdi-material-ui/Menu";
 import ChevronLeftIcon from "mdi-material-ui/ChevronLeft";
 import HomeIcon from "mdi-material-ui/Home";
@@ -72,6 +73,8 @@ export default function NavBar() {
   const classes = useStyles();
 
   const [openDrawer, setOpenDrawer] = useState(false);
+  const theme = useTheme();
+  const IsBreakpointsUpSm = useMediaQuery(theme.breakpoints.up("sm"));
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -104,7 +107,7 @@ export default function NavBar() {
           activeClass="active"
           to="projects"
           spy={true}
-          offset={-64}
+          offset={IsBreakpointsUpSm ? -64 : -56}
           smooth={true}
           duration={500}
           onClick={() => setOpenDrawer(!openDrawer)}
@@ -170,7 +173,7 @@ export default function NavBar() {
               activeClass="active"
               to="projects"
               spy={true}
-              offset={-64}
+              offset={IsBreakpointsUpSm ? -64 : -56}
               smooth={true}
               duration={500}
             >
