@@ -47,6 +47,15 @@ const useStyles = makeStyles(theme => ({
 
 export default function ProjectCard(props) {
   const classes = useStyles();
+
+  const handleDemoClick = () => {
+    window.open(props.demoUrl, props.title);
+  };
+
+  const handleSourceClick = () => {
+    window.open(props.sourceUrl, props.title);
+  };
+
   return (
     <div className={classes.ProjectCard}>
       <div className={classes.imgContainer}>
@@ -73,6 +82,7 @@ export default function ProjectCard(props) {
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={handleDemoClick}
           >
             <MonitorIcon className={classes.leftIcon} />
             Demo
@@ -81,6 +91,7 @@ export default function ProjectCard(props) {
             variant="contained"
             color="secondary"
             className={classes.button}
+            onClick={handleSourceClick}
           >
             <GithubCircleIcon className={classes.leftIcon} />
             Source

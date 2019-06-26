@@ -34,7 +34,9 @@ export default function MyProjects() {
         "Build with React",
         "UI and animations powered by Material-UI",
         "Fully Responsive"
-      ]
+      ],
+      demoUrl: "https://sirapop-note-app.netlify.com/",
+      sourceUrl: "https://github.com/kivvvvv/note-app"
     },
     {
       imgSrc: "https://media.giphy.com/media/JrYsmSc1WuVKnEYi1Q/giphy.gif",
@@ -45,7 +47,9 @@ export default function MyProjects() {
         "Build with React",
         "Animations powered by Animate.css",
         "In game overlay modal created with SweetAlert2"
-      ]
+      ],
+      demoUrl: "https://sirapop-matching-game.netlify.com/",
+      sourceUrl: "https://github.com/kivvvvv/matching-game"
     },
     {
       imgSrc: "https://media.giphy.com/media/H3wABNM4j2Eed1MzMP/giphy.gif",
@@ -57,7 +61,9 @@ export default function MyProjects() {
         "Highly documented in a serie of 5 sections",
         "No framework used",
         "Many live examples and commits for better learning experience"
-      ]
+      ],
+      demoUrl: "https://github.com/kivvvvv/cat-clicker/wiki",
+      sourceUrl: "https://github.com/kivvvvv/cat-clicker"
     }
   ];
 
@@ -100,6 +106,8 @@ export default function MyProjects() {
             title={project.title}
             desc={project.desc}
             bullets={project.bullets}
+            demoUrl={project.demoUrl}
+            sourceUrl={project.sourceUrl}
           />
         ))}
       </Container>
