@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 export default function GetInTouch() {
   const classes = useStyles();
   return (
-    <section className={classes.GetInTouch}>
+    <section id="getInTouch" className={classes.GetInTouch}>
       <Container maxWidth="md">
         <header className={classes.sectionHeader}>
           <Typography variant="h2" align="center">

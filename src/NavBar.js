@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import Container from "@material-ui/core/Container";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -26,20 +27,46 @@ const useStyles = makeStyles(theme => ({
 
 export default function NavBar() {
   const classes = useStyles();
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Container maxWidth="md">
         <Toolbar>
           <Typography className={classes.home}>Sirapop</Typography>
-          <Button variant="outlined" className={classes.button}>
+          <Button
+            variant="outlined"
+            className={classes.button}
+            onClick={scrollToTop}
+          >
             Home
           </Button>
-          <Button variant="outlined" className={classes.button}>
-            Projects
-          </Button>
-          <Button variant="outlined" className={classes.button}>
-            Get in Touch
-          </Button>
+          <Link
+            activeClass="active"
+            to="projects"
+            spy={true}
+            offset={-64}
+            smooth={true}
+            duration={500}
+          >
+            <Button variant="outlined" className={classes.button}>
+              Projects
+            </Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="getInTouch"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <Button variant="outlined" className={classes.button}>
+              Get in Touch
+            </Button>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>

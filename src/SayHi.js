@@ -30,7 +30,7 @@ export default function SayHi() {
   const classes = useStyles();
 
   return (
-    <section>
+    <section id="home">
       <Container maxWidth="md">
         <div className={classes.heroContent}>
           <Typography component="h2" variant="h4" align="center" gutterBottom>

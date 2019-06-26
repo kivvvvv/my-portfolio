@@ -62,7 +62,7 @@ export default function MyProjects() {
   ];
 
   return (
-    <section className={classes.MyProjects}>
+    <section id="projects" className={classes.MyProjects}>
       <Container maxWidth="md">
         <header className={classes.sectionHeader}>
           <Typography variant="h2" align="center">
