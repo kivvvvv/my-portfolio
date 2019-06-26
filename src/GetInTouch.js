@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
@@ -7,6 +7,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import PdfBoxIcon from "mdi-material-ui/PdfBox";
 import GmailIcon from "mdi-material-ui/Gmail";
 import GithubCircleIcon from "mdi-material-ui/GithubCircle";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const useStyles = makeStyles(theme => ({
   GetInTouch: {
@@ -34,6 +35,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function GetInTouch() {
   const classes = useStyles();
+
+  const [copied, setCopied] = useState(false);
   return (
     <section id="getInTouch" className={classes.GetInTouch}>
       <Container maxWidth="md">
@@ -52,16 +55,21 @@ export default function GetInTouch() {
               <PdfBoxIcon />
             </Fab>
           </Tooltip>
-          <Tooltip placement="top" title="Copy my Email">
-            <Fab
-              variant="extended"
-              aria-label="Copy my Email"
-              className={classes.fab}
-            >
-              <GmailIcon className={classes.extendedIcon} />
-              Copy my Email
-            </Fab>
-          </Tooltip>
+          <CopyToClipboard
+            text="sirapop.iam.0131@gmail.com"
+            onCopy={() => setCopied(true)}
+          >
+            <Tooltip placement="top" title="Copy my Email">
+              <Fab
+                variant="extended"
+                aria-label="Copy my Email"
+                className={classes.fab}
+              >
+                <GmailIcon className={classes.extendedIcon} />
+                Copy my Email
+              </Fab>
+            </Tooltip>
+          </CopyToClipboard>
           <Tooltip placement="top" title="Go to my Github">
             <Fab
               color="primary"
