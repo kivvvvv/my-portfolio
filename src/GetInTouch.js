@@ -57,20 +57,22 @@ export default function GetInTouch() {
           </Typography>
         </header>
         <div className={classes.contactListContainer}>
-          <Tooltip placement="top" title="View my Resume">
+          <Tooltip placement="top" title="Click to View my Resume">
             <Fab
+              variant="extended"
               color="primary"
               aria-label="View my Resume"
               className={classes.fab}
             >
-              <PdfBoxIcon />
+              <PdfBoxIcon className={classes.extendedIcon} />
+              View my Resume
             </Fab>
           </Tooltip>
           <CopyToClipboard
             text="sirapop.iam.0131@gmail.com"
             onCopy={() => setCopied(true)}
           >
-            <Tooltip placement="top" title="Copy my Email">
+            <Tooltip placement="top" title="Click to Copy my Email">
               <Fab
                 variant="extended"
                 aria-label="Copy my Email"
@@ -81,13 +83,15 @@ export default function GetInTouch() {
               </Fab>
             </Tooltip>
           </CopyToClipboard>
-          <Tooltip placement="top" title="Go to my Github">
+          <Tooltip placement="top" title="Click to Go to my Github">
             <Fab
+              variant="extended"
               color="primary"
               aria-label="Go to my Github"
               className={classes.fab}
             >
-              <GithubCircleIcon />
+              <GithubCircleIcon className={classes.extendedIcon} />
+              Go to my Github
             </Fab>
           </Tooltip>
           <Snackbar
