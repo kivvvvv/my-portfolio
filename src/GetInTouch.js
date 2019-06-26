@@ -3,10 +3,13 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import PdfBoxIcon from "mdi-material-ui/PdfBox";
 import GmailIcon from "mdi-material-ui/Gmail";
 import GithubCircleIcon from "mdi-material-ui/GithubCircle";
+import CloseIcon from "mdi-material-ui/Close";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const useStyles = makeStyles(theme => ({
@@ -30,6 +33,9 @@ const useStyles = makeStyles(theme => ({
   },
   extendedIcon: {
     marginRight: theme.spacing(1)
+  },
+  close: {
+    padding: theme.spacing(0.5)
   }
 }));
 
@@ -37,6 +43,11 @@ export default function GetInTouch() {
   const classes = useStyles();
 
   const [copied, setCopied] = useState(false);
+
+  const handleSnackBarCloseClick = () => {
+    setCopied(false);
+  };
+
   return (
     <section id="getInTouch" className={classes.GetInTouch}>
       <Container maxWidth="md">
@@ -79,26 +90,32 @@ export default function GetInTouch() {
               <GithubCircleIcon />
             </Fab>
           </Tooltip>
-
-          {/* <Chip
-            variant="outlined"
-            icon={<PdfBoxIcon />}
-            label="My resume"
-            className={classes.chip}
-            clickable
+          <Snackbar
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left"
+            }}
+            open={copied}
+            autoHideDuration={6000}
+            onClose={handleSnackBarCloseClick}
+            ContentProps={{
+              "aria-describedby": "message-id"
+            }}
+            message={
+              <span id="message-id">Email is copied to the Clip Board</span>
+            }
+            action={[
+              <IconButton
+                key="close"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={handleSnackBarCloseClick}
+              >
+                <CloseIcon />
+              </IconButton>
+            ]}
           />
-          <Chip
-            variant="outlined"
-            icon={<GmailIcon />}
-            label="sirapop.iam.0131@gmail.com"
-            className={classes.chip}
-          />
-          <Chip
-            variant="outlined"
-            icon={<GithubCircleIcon />}
-            label="github.com/kivvvvv"
-            className={classes.chip}
-          /> */}
         </div>
       </Container>
     </section>
