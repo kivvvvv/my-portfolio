@@ -8,15 +8,17 @@ import GithubCircleIcon from "mdi-material-ui/GithubCircle";
 const useStyles = makeStyles(theme => ({
   ProjectCard: {
     display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row"
+    },
     justifyContent: "center",
-    padding: "8px",
-    margin: "8px"
+    padding: theme.spacing(1),
+    marginBottom: theme.spacing(3)
   },
   imgContainer: {
-    width: "25vw",
-    height: "25vw",
     maxWidth: "400px",
-    backgroundColor: "grey",
+    fontSize: 0,
     "& img": {
       width: "100%"
     }
@@ -28,10 +30,12 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   projectDetail: {
-    width: "25vw",
     maxWidth: "400px",
-    marginLeft: theme.spacing(2),
-    padding: theme.spacing(3)
+    padding: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(2),
+      padding: theme.spacing(3)
+    }
   },
   button: {
     margin: theme.spacing(1)
@@ -39,10 +43,9 @@ const useStyles = makeStyles(theme => ({
   leftIcon: {
     marginRight: theme.spacing(1)
   },
-  projectActions: {},
-  projectTitle: {},
-  projectDesc: {},
-  projectBullet: {}
+  projectActions: {
+    display: "flex"
+  }
 }));
 
 export default function ProjectCard(props) {
@@ -63,13 +66,13 @@ export default function ProjectCard(props) {
       </div>
       <div className={classes.projectContent}>
         <div className={classes.projectDetail}>
-          <header className={classes.projectTitle}>
+          <header>
             <Typography variant="h5">{props.title}</Typography>
           </header>
-          <div className={classes.projectDesc}>
+          <div>
             <Typography>{props.desc}</Typography>
           </div>
-          <div className={classes.projectBullet}>
+          <div>
             <ul>
               {props.bullets.map((bullet, bulletId) => (
                 <li key={bulletId}>{bullet}</li>

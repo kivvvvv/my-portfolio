@@ -12,13 +12,24 @@ import ProjectCard from "./ProjectCard";
 const useStyles = makeStyles(theme => ({
   MyProjects: {
     padding: `${theme.spacing(6)}px 0`,
-    backgroundColor: "#e6e6e6"
+    backgroundColor: "#eaeaea"
   },
   sectionHeader: {
     marginBottom: theme.spacing(6)
   },
   chip: {
     margin: theme.spacing(1)
+  },
+  myTechStack: {
+    marginBottom: theme.spacing(3)
+  },
+  techStack: {
+    display: "flex",
+    justifyContent: "center"
+  },
+  projects: {
+    display: "flex",
+    flexDirection: "column"
   }
 }));
 
@@ -75,9 +86,11 @@ export default function MyProjects() {
             # Projects
           </Typography>
         </header>
-        <div>
-          <Typography variant="h5" align="center">
-            Tech Stack:
+        <div className={classes.myTechStack}>
+          <Typography variant="h4" align="center">
+            My Tech Stack
+          </Typography>
+          <div className={classes.techStack}>
             <Chip
               color="primary"
               icon={<LanguageHtml5Icon />}
@@ -96,20 +109,22 @@ export default function MyProjects() {
               label="React"
               className={classes.chip}
             />
-          </Typography>
+          </div>
         </div>
-        {projects.map((project, projectIndex) => (
-          <ProjectCard
-            key={projectIndex}
-            imgSrc={project.imgSrc}
-            imgAlt={project.imgAlt}
-            title={project.title}
-            desc={project.desc}
-            bullets={project.bullets}
-            demoUrl={project.demoUrl}
-            sourceUrl={project.sourceUrl}
-          />
-        ))}
+        <div>
+          {projects.map((project, projectIndex) => (
+            <ProjectCard
+              key={projectIndex}
+              imgSrc={project.imgSrc}
+              imgAlt={project.imgAlt}
+              title={project.title}
+              desc={project.desc}
+              bullets={project.bullets}
+              demoUrl={project.demoUrl}
+              sourceUrl={project.sourceUrl}
+            />
+          ))}
+        </div>
       </Container>
     </section>
   );
