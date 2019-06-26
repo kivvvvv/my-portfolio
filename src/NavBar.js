@@ -26,6 +26,18 @@ const useStyles = makeStyles(theme => ({
     background: `url(${LiquidCheeseSvg}) no-repeat center center fixed;`,
     backgroundSize: "cover"
   },
+  toolbar: {
+    [theme.breakpoints.down("sm")]: {
+      paddingRight: theme.spacing(1),
+      paddingLeft: theme.spacing(1)
+    }
+  },
+  toolbarActions: {
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block"
+    }
+  },
   home: {
     flexGrow: 1,
     textTransform: "uppercase",
@@ -36,7 +48,10 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1)
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none"
+    }
   },
   drawerHeader: {
     display: "flex",
@@ -132,7 +147,7 @@ export default function NavBar() {
         {sideList()}
       </Drawer>
       <Container maxWidth="md">
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -143,36 +158,38 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.home}>Sirapop</Typography>
-          <Button
-            variant="outlined"
-            className={classes.button}
-            onClick={scrollToTop}
-          >
-            Home
-          </Button>
-          <Link
-            activeClass="active"
-            to="projects"
-            spy={true}
-            offset={-64}
-            smooth={true}
-            duration={500}
-          >
-            <Button variant="outlined" className={classes.button}>
-              Projects
+          <div className={classes.toolbarActions}>
+            <Button
+              variant="outlined"
+              className={classes.button}
+              onClick={scrollToTop}
+            >
+              Home
             </Button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="getInTouch"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            <Button variant="outlined" className={classes.button}>
-              Get in Touch
-            </Button>
-          </Link>
+            <Link
+              activeClass="active"
+              to="projects"
+              spy={true}
+              offset={-64}
+              smooth={true}
+              duration={500}
+            >
+              <Button variant="outlined" className={classes.button}>
+                Projects
+              </Button>
+            </Link>
+            <Link
+              activeClass="active"
+              to="getInTouch"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              <Button variant="outlined" className={classes.button}>
+                Get in Touch
+              </Button>
+            </Link>
+          </div>
         </Toolbar>
       </Container>
     </AppBar>
