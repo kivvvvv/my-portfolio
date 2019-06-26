@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import EmoticonCoolOutlineIcon from "mdi-material-ui/EmoticonCoolOutline";
 
 const useStyles = makeStyles(theme => ({
   heroContent: {
@@ -9,6 +10,10 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     height: `calc(100vh - ${theme.spacing(8)}px)`,
     backgroundColor: theme.palette.background.paper
+  },
+  emoticon: {
+    fontSize: "120%",
+    verticalAlign: "middle"
   }
 }));
 
@@ -28,7 +33,8 @@ export default function SayHi() {
           And I'm going to be
         </Typography>
         <Typography component="h2" variant="h4" align="center">
-          a front-end developer!
+          a front-end developer{" "}
+          <EmoticonCoolOutlineIcon className={classes.emoticon} />
         </Typography>
       </div>
     </div>
