@@ -16,7 +16,7 @@ export default function NavBar() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <AppBar position="absolute">
+      <AppBar position="sticky">
         <Container maxWidth="md">
           <Toolbar>
             <Typography className={classes.home}>Sirapop</Typography>

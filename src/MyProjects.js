@@ -1,68 +1,64 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles(theme => ({
-  projectContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
+  sectionHeader: {
+    margin: `${theme.spacing(5)}px 0`
   }
 }));
 
 export default function MyProjects() {
+  const classes = useStyles();
   const projects = [
     {
-      imgSrc: null,
-      imgAlt: null,
-      title: "title1",
-      desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      imgSrc: "https://media.giphy.com/media/Sr853yy75d4a3Qvseg/giphy.gif",
+      imgAlt: "Note App Example",
+      title: "Note App",
+      desc: "A resposive note application.",
       bullets: [
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text"
+        "Build with React",
+        "UI and animations powered by Material-UI",
+        "Fully Responsive"
       ]
     },
     {
-      imgSrc: null,
-      imgAlt: null,
-      title: "title2",
-      desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      imgSrc: "https://media.giphy.com/media/JrYsmSc1WuVKnEYi1Q/giphy.gif",
+      imgAlt: "Matching Game Example",
+      title: "Matching Game",
+      desc: "An enjoyable matching game.",
       bullets: [
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text"
+        "Build with React",
+        "Animations powered by Animate.css",
+        "In game overlay modal created with SweetAlert2"
       ]
     },
     {
-      imgSrc: null,
-      imgAlt: null,
-      title: "title3",
+      imgSrc: "https://media.giphy.com/media/H3wABNM4j2Eed1MzMP/giphy.gif",
+      imgAlt: "Cat Clicker Example",
+      title: "Cat Clicker",
       desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "A serie of Github wikis with an example application to help learning Javascript design patterns.",
       bullets: [
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text",
-        "Lorem Ipsum is simply dummy text"
+        "Highly documented in a serie of 5 sections",
+        "No framework used",
+        "Many live examples and commits for better learning experience"
       ]
     }
   ];
 
   return (
-    <Container maxWidth="md">
-      {projects.map(project => (
+    <section>
+      <header className={classes.sectionHeader}>
+        <Typography variant="h2" align="center">
+          # Projects
+        </Typography>
+      </header>
+      {projects.map((project, projectIndex) => (
         <ProjectCard
+          key={projectIndex}
           imgSrc={project.imgSrc}
           imgAlt={project.imgAlt}
           title={project.title}
@@ -70,6 +66,6 @@ export default function MyProjects() {
           bullets={project.bullets}
         />
       ))}
-    </Container>
+    </section>
   );
 }

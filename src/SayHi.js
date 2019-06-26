@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -8,7 +7,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: `calc(100vh - ${theme.spacing(8)}px)`,
     backgroundColor: theme.palette.background.paper
   }
 }));
@@ -18,7 +17,7 @@ export default function SayHi() {
 
   return (
     <div className={classes.heroContent}>
-      <Container maxWidth="md">
+      <div>
         <Typography component="h2" variant="h4" align="center">
           Hi, my name is
         </Typography>
@@ -31,7 +30,7 @@ export default function SayHi() {
         <Typography component="h2" variant="h4" align="center">
           a front-end developer!
         </Typography>
-      </Container>
+      </div>
     </div>
   );
 }
