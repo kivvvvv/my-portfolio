@@ -1,7 +1,11 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Chip from "@material-ui/core/Chip";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import LanguageHtml5Icon from "mdi-material-ui/LanguageHtml5";
+import LanguageCss3Icon from "mdi-material-ui/LanguageCss3";
+import ReactIcon from "mdi-material-ui/React";
 
 import ProjectCard from "./ProjectCard";
 
@@ -12,6 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   sectionHeader: {
     marginBottom: theme.spacing(6)
+  },
+  chip: {
+    margin: theme.spacing(1)
   }
 }));
 
@@ -62,6 +69,29 @@ export default function MyProjects() {
             # Projects
           </Typography>
         </header>
+        <div>
+          <Typography variant="h5" align="center">
+            Tech Stack:
+            <Chip
+              color="primary"
+              icon={<LanguageHtml5Icon />}
+              label="HTML"
+              className={classes.chip}
+            />
+            <Chip
+              color="primary"
+              icon={<LanguageCss3Icon />}
+              label="CSS"
+              className={classes.chip}
+            />
+            <Chip
+              color="primary"
+              icon={<ReactIcon />}
+              label="React"
+              className={classes.chip}
+            />
+          </Typography>
+        </div>
         {projects.map((project, projectIndex) => (
           <ProjectCard
             key={projectIndex}
