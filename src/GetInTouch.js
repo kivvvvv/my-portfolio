@@ -15,7 +15,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 const useStyles = makeStyles(theme => ({
   GetInTouch: {
     padding: `${theme.spacing(6)}px 0`,
-    height: "35vh"
+    [theme.breakpoints.up("sm")]: {
+      height: "35vh"
+    }
   },
   sectionHeader: {
     marginBottom: theme.spacing(6)
