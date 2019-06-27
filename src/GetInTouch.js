@@ -65,6 +65,12 @@ export default function GetInTouch() {
               color="primary"
               aria-label="View my Resume"
               className={classes.fab}
+              onClick={() =>
+                window.open(
+                  "https://novoresume.com/a/kivistheslayer.1",
+                  "Sirapop's Resume"
+                )
+              }
             >
               <PdfBoxIcon className={classes.extendedIcon} />
               View my Resume
@@ -92,6 +98,12 @@ export default function GetInTouch() {
               color="primary"
               aria-label="Go to my Github"
               className={classes.fab}
+              onClick={() =>
+                window.open(
+                  "https://github.com/kivvvvv/",
+                  "Sirapop's Github Page"
+                )
+              }
             >
               <GithubCircleIcon className={classes.extendedIcon} />
               Go to my Github
