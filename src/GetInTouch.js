@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     flexWrap: "wrap"
   },
   fab: {
-    margin: theme.spacing(3),
+    margin: `${theme.spacing(1)}px  ${theme.spacing(3)}px`,
     "& svg": {
       fontSize: "3rem"
     }
@@ -75,6 +75,7 @@ export default function GetInTouch() {
             <Tooltip placement="top" title="Click to Copy my Email">
               <Fab
                 variant="extended"
+                color="primary"
                 aria-label="Copy my Email"
                 className={classes.fab}
               >

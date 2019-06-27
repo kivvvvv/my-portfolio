@@ -92,7 +92,7 @@ export default function ProjectCard(props) {
           </Button>
           <Button
             variant="contained"
-            color="secondary"
+            color="default"
             className={classes.button}
             onClick={handleSourceClick}
           >
