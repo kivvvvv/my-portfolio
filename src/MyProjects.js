@@ -37,7 +37,7 @@ export default function MyProjects() {
       imgSrc: "https://media.giphy.com/media/Sr853yy75d4a3Qvseg/giphy.gif",
       imgAlt: "Note App Example",
       title: "Note App",
-      desc: "A resposive note application.",
+      desc: "A functional note application.",
       bullets: [
         "Build with React",
         "UI and animations powered by Material-UI",
@@ -63,10 +63,9 @@ export default function MyProjects() {
       imgSrc: "https://media.giphy.com/media/H3wABNM4j2Eed1MzMP/giphy.gif",
       imgAlt: "Cat Clicker Example",
       title: "Cat Clicker",
-      desc:
-        "A serie of Github wikis with an example application to help learning Javascript design patterns.",
+      desc: "A serie of Github wikis about some JavaScript design patterns to help myself retains knowledges.",
       bullets: [
-        "Highly documented in a serie of 5 sections",
+        "Highly documented in a serie of 5 sections with examples",
         "No framework used",
         "Many live examples and commits for better learning experience"
       ],
