@@ -2,9 +2,9 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import EmoticonCoolOutlineIcon from "mdi-material-ui/EmoticonCoolOutline";
+import { EmoticonCoolOutlineIcon } from "components/SvgIcons";
 
-import LiquidCheeseSvg from "./Liquid-Cheese.svg";
+import LiquidCheeseSvg from "static/assets/images/Liquid-Cheese.svg";
 
 const useStyles = makeStyles(theme => ({
   heroContent: {

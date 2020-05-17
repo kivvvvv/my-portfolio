@@ -6,10 +6,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import PdfBoxIcon from "mdi-material-ui/PdfBox";
-import GmailIcon from "mdi-material-ui/Gmail";
-import GithubCircleIcon from "mdi-material-ui/GithubCircle";
-import CloseIcon from "mdi-material-ui/Close";
+import { PdfBoxIcon, GmailIcon, GithubCircleIcon, CloseIcon } from "components/SvgIcons"
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const useStyles = makeStyles(theme => ({

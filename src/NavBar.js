@@ -14,13 +14,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "mdi-material-ui/Menu";
-import ChevronLeftIcon from "mdi-material-ui/ChevronLeft";
-import HomeIcon from "mdi-material-ui/Home";
-import MonitorIcon from "mdi-material-ui/Monitor";
-import GmailIcon from "mdi-material-ui/Gmail";
+import { MenuIcon, ChevronLeftIcon, HomeIcon, MonitorIcon, GmailIcon } from "components/SvgIcons"
 
-import LiquidCheeseSvg from "./Liquid-Cheese.svg";
+import LiquidCheeseSvg from "static/assets/images/Liquid-Cheese.svg";
 
 const useStyles = makeStyles(theme => ({
   appBar: {

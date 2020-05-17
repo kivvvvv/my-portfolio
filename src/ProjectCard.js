@@ -2,8 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import MonitorIcon from "mdi-material-ui/Monitor";
-import GithubCircleIcon from "mdi-material-ui/GithubCircle";
+import { MonitorIcon, GithubCircleIcon } from "components/SvgIcons"
 
 const useStyles = makeStyles(theme => ({
   ProjectCard: {

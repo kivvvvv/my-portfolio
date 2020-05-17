@@ -1,0 +1,12 @@
+export { default as MenuIcon } from "mdi-material-ui/Menu";
+export { default as ChevronLeftIcon } from "mdi-material-ui/ChevronLeft";
+export { default as HomeIcon } from "mdi-material-ui/Home";
+export { default as MonitorIcon } from "mdi-material-ui/Monitor";
+export { default as GmailIcon } from "mdi-material-ui/Gmail";
+export { default as EmoticonCoolOutlineIcon } from "mdi-material-ui/EmoticonCoolOutline";
+export { default as LanguageHtml5Icon } from "mdi-material-ui/LanguageHtml5";
+export { default as LanguageCss3Icon } from "mdi-material-ui/LanguageCss3";
+export { default as ReactIcon } from "mdi-material-ui/React";
+export { default as GithubCircleIcon } from "mdi-material-ui/Github";
+export { default as PdfBoxIcon } from "mdi-material-ui/PdfBox";
+export { default as CloseIcon } from "mdi-material-ui/Close";

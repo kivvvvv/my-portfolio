@@ -3,10 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import LanguageHtml5Icon from "mdi-material-ui/LanguageHtml5";
-import LanguageCss3Icon from "mdi-material-ui/LanguageCss3";
-import ReactIcon from "mdi-material-ui/React";
-
+import { LanguageHtml5Icon, LanguageCss3Icon, ReactIcon } from "components/SvgIcons";
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles(theme => ({
