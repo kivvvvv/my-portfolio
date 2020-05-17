@@ -1,9 +1,9 @@
 import React from "react";
 
-import NavBar from "./NavBar";
-import SayHi from "./SayHi";
-import MyProjects from "./MyProjects";
-import GetInTouch from "./GetInTouch";
+import NavBar from "components/NavBar";
+import SayHi from "components/SayHi";
+import MyProjects from "components/MyProjects";
+import GetInTouch from "components/GetInTouch";
 
 export default function App() {
   return (
