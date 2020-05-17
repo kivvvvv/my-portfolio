@@ -64,7 +64,7 @@ export default function GetInTouch() {
               className={classes.fab}
               onClick={() =>
                 window.open(
-                  "https://novoresume.com/a/kivistheslayer.1",
+                  "https://www.dropbox.com/s/svx9h78sc3e7l90/Sirapop%27s%20Resume.pdf?dl=0",
                   "Sirapop's Resume"
                 )
               }
