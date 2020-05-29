@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import { LanguageHtml5Icon, LanguageCss3Icon, ReactIcon } from "components/SvgIcons";
+import { LanguageHtml5Icon, LanguageCss3Icon, ReactIcon, ReduxIcon } from "components/SvgIcons";
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +22,8 @@ const useStyles = makeStyles(theme => ({
   },
   techStack: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexWrap: "wrap"
   },
   projects: {
     display: "flex",
@@ -104,6 +105,12 @@ export default function MyProjects() {
               icon={<ReactIcon />}
               label="React"
               className={classes.chip}
+            />
+            <Chip
+                color="primary"
+                icon={<ReduxIcon />}
+                label="Redux"
+                className={classes.chip}
             />
           </div>
         </div>

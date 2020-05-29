@@ -10,3 +10,4 @@ export { default as ReactIcon } from "mdi-material-ui/React";
 export { default as GithubCircleIcon } from "mdi-material-ui/Github";
 export { default as PdfBoxIcon } from "mdi-material-ui/PdfBox";
 export { default as CloseIcon } from "mdi-material-ui/Close";
+export { default as ReduxIcon } from "./ReduxIcon"
